@@ -31,5 +31,14 @@ class LastFMSettings(BaseSettings):
     shared_secret: Optional[str] = None
 
 
+class YouTubeSettings(BaseSettings):
+    """YouTube API configuration."""
+
+    model_config = SettingsConfigDict(env_file=".env", env_prefix="YOUTUBE_", extra="ignore")
+
+    api_key: Optional[str] = None
+
+
 settings = Settings()
 lastfm_settings = LastFMSettings()
+youtube_settings = YouTubeSettings()
